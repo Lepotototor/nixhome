@@ -3,51 +3,41 @@
 let
   desktopPkgs = with pkgs; [
     spotify
-    lxrandr
     i3lock-fancy
-    flameshot
     syncthing
     nitrogen
-    thunderbird
     vlc
     discord
-    dotnet-sdk_7
     arandr
     autorandr
     networkmanagerapplet
-    kicad-small
     libreoffice
-    evince
-    freecad
-    cups
   ];
 
   environment.systemPackages = with pkgs; [
     fish
+    starship
     kitty
+    vim
+    pfetch
   ];
 
   shellPkgs = with pkgs; [
     # Shell
-    any-nix-shell
     gcc
     grc
     curl
     wget
-    delta
 
     # Utility
     htop
-    cheat
     neofetch
     lsd
     bat
     netcat
-    feh
     pulsemixer
     ranger
     rnix-lsp
-    clang-tools
     zip
     unzip
 
@@ -56,17 +46,8 @@ let
     man-pages
     man-pages-posix
 
-    # Python
-    # python39Packages.poetry
-    (python39.withPackages (ps: with ps; [ pip pandas ]))
   ];
 
-  npmPkgs = with pkgs.nodePackages; [
-    typescript-language-server
-    typescript
-    js-beautify
-    node2nix
-  ];
 
 in {
   programs.home-manager.enable = true;
@@ -77,7 +58,7 @@ in {
     username = "victor.flament";
     homeDirectory = "/home/victor.flament";
 
-    packages = desktopPkgs ++ shellPkgs ++ npmPkgs ++ environment.systemPackages;
+    packages = desktopPkgs ++ shellPkgs ++ environment.systemPackages;
     stateVersion = "22.05";
   };
 
