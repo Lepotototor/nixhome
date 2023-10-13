@@ -11,7 +11,7 @@ This is my nix home-manager
 git clone https://github.com/Lepotototor/nixhome
 
 # Create Soft Link (relative + backup)
-ln -srfb nixhome $HOME/.config/nixpkgs
+ln -srfb nixhome $HOME/.config/home-manager
 
 # Update Configuration
 home-manager switch

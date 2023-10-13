@@ -22,7 +22,7 @@ let
     cups
   ];
 
-  environment.systemPackages = with [
+  environment.systemPackages = with pkgs; [
     fish
     kitty
   ];
@@ -77,7 +77,7 @@ in {
     username = "victor.flament";
     homeDirectory = "/home/victor.flament";
 
-    packages = desktopPkgs ++ shellPkgs ++ npmPkgs ++ systemPackages;
+    packages = desktopPkgs ++ shellPkgs ++ npmPkgs ++ environment.systemPackages;
     stateVersion = "22.05";
   };
 
