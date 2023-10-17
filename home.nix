@@ -20,6 +20,7 @@ let
     kitty
     vim
     pfetch
+    exa
   ];
 
   shellPkgs = with pkgs; [
