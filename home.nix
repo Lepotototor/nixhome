@@ -6,12 +6,10 @@ let
     i3lock-fancy
     syncthing
     nitrogen
-    vlc
     discord
     arandr
     autorandr
     networkmanagerapplet
-    libreoffice
   ];
 
   environment.systemPackages = with pkgs; [
@@ -25,8 +23,6 @@ let
 
   shellPkgs = with pkgs; [
     # Shell
-    gcc
-    grc
     curl
     wget
 
@@ -43,9 +39,7 @@ let
     unzip
 
     # Man
-    clang-manpages
     man-pages
-    man-pages-posix
 
   ];
 
